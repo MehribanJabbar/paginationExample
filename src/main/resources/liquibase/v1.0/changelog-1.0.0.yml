@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-07-12
+      author: Mehriban Jabbar
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birth_place
+                  type: varchar(100)
+              - column:
+                  name: email
+                  type: varchar(60)
+              - column:
+                  name: age
+                  type: int
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
